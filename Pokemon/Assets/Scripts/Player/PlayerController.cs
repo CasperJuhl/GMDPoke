@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     public LayerMask collisionLayer;
+    public LayerMask pokemonGrass;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -63,11 +65,24 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         moving = false;
+
+        EncounterPokemon();
+    }
+
+    private void EncounterPokemon()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, pokemonGrass) != null)
+        {
+            if (Random.Range(1, 101) <= 10)
+            {
+                Debug.Log("ENCOUNTER!");
+            }
+        }
     }
 
     private bool CheckCollision(Vector3 position)
     {
-        if (Physics2D.OverlapCircle(position, 0.3f, collisionLayer) != null)
+        if (Physics2D.OverlapCircle(position, 0.2f, collisionLayer) != null)
         {
             return false;
         }
