@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Random.Range(1, 101) <= 10)
             {
-                Debug.Log("ENCOUNTER!");
+                SceneManager.LoadScene("BattleScene");
             }
         }
     }
