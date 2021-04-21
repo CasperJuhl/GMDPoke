@@ -5,11 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class EnterHouseScript : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    public bool isTriggered;
+    public IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.W) == true || Input.GetKey(KeyCode.W) == true)
+        isTriggered = true;
+        while (isTriggered)
         {
-            SceneManager.LoadScene("OaksLab");
+            if (Input.GetKeyDown(KeyCode.W) == true || Input.GetKey(KeyCode.W) == true)
+            {
+                SceneManager.LoadScene("OaksLab");
+            }
+            yield return new WaitForSeconds(0);
         }
+        yield break;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isTriggered = false;
     }
 }
+
