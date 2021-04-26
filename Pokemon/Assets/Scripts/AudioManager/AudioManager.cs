@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("Intro");
+        Play(sounds[0].name);
     }
     void Update()
     {

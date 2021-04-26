@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3311019957134934995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.36, y: -0.978, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -199, y: -131, z: -1}
+  m_LocalScale: {x: 80, y: 80, z: 1}
   m_Children:
   - {fileID: 8991908154140673846}
   m_Father: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Charmander
   Level: 6
-  damage: 12
+  damage: 14
   HP: 40
   currentHP: 40
 --- !u!1 &5054686302992986911
