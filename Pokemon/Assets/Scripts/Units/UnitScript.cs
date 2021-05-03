@@ -5,11 +5,13 @@ using UnityEngine;
 public class UnitScript : MonoBehaviour
 {
     public string Name;
+
     public int Level;
 
     public int damage;
 
     public int HP;
+
     public int currentHP;
 
     public bool TakeDamage(int dmg)

@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask collisionLayer;
     public LayerMask pokemonGrass;
 
+    GameObject playerRespawn;
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -21,7 +24,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("INSIDE START");
+
+        playerRespawn = GameObject.Find("Player");
+        if (SpawnScript.encounter)
+        {
+            Debug.Log("INSIDE IF (ENCOUNTER) ");
+            playerRespawn.transform.position = SpawnScript.playerPosition;
+            SpawnScript.encounter = false;
+        }
     }
 
     // Update is called once per frame
@@ -67,15 +78,19 @@ public class PlayerController : MonoBehaviour
 
         moving = false;
 
-        EncounterPokemon();
+        EncounterPokemon(targetPos);
     }
 
-    private void EncounterPokemon()
+    private void EncounterPokemon(Vector3 targetPos)
     {
         if (Physics2D.OverlapCircle(transform.position, 0.2f, pokemonGrass) != null)
         {
             if (Random.Range(1, 101) <= 10)
             {
+                SpawnScript.encounter = true;
+                SpawnScript.playerPosition = targetPos;
+                Debug.Log(SpawnScript.playerPosition);
+
                 SceneManager.LoadScene("BattleScene");
             }
         }

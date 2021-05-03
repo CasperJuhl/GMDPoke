@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\EnterHouse\EnterHouseScript.cs" />
     <Compile Include="Assets\Scripts\EnterHouse\LeaveOakHouseScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\SpawnScript.cs" />
     <Compile Include="Assets\Scripts\StartGame\LevelChanger.cs" />
     <Compile Include="Assets\Scripts\StartGame\StartButtonScript.cs" />
     <Compile Include="Assets\Scripts\Units\UnitScript.cs" />
